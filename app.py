@@ -32,7 +32,8 @@ CONTOH_PESAN = {
 def load_default_dataset():
     df = pd.read_csv(
         "SMSSpamCollection", sep="\t", header=None,
-        names=["label", "message"], encoding="utf-8"
+        names=["label", "message"], encoding="utf-8",
+        quoting=3
     )
     return df
 
