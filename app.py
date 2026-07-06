@@ -116,7 +116,7 @@ if uploaded_file is not None:
         df = load_default_dataset()
 else:
     df = load_default_dataset()
-    st.sidebar.info("Menggunakan dataset bawaan (SMSSpamCollection, 5.574 pesan)")
+    st.sidebar.info(f"Menggunakan dataset bawaan (SMSSpamCollection, {df.shape[0]} pesan)")
 
 df = df.dropna(subset=["label", "message"])
 df = df[df["label"].isin(["ham", "spam"])].reset_index(drop=True)
